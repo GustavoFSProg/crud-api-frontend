@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { useHistory } from 'react-router-dom'
 import Image from '../assets/imagem_1.jpeg'
 import api from '../services/api'
 import './style.css'
