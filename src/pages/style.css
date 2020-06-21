@@ -49,7 +49,7 @@
 .new-incident-container .content form input {
   margin-top: 8px;
   border: 1px solid #cccccc;
-  border-radius: 8px;
+  border-radius: 10px;
   width: 80%;
   height: 20px;
   padding: 10px;
