@@ -7,8 +7,8 @@ export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/list" component={listProducts}></Route>
         <Route path="/" exact component={Home}></Route>
+        <Route path="/list" component={listProducts}></Route>
       </Switch>
     </BrowserRouter>
   )
