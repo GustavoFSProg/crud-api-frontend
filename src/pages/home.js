@@ -22,6 +22,8 @@ class Home extends Component {
     data.append('price', this.state.price)
 
     await api.post('/', data)
+
+    window.location.reload('/')
   }
 
   handleImageChange = (e) => {
@@ -50,8 +52,8 @@ class Home extends Component {
             ></input>
             <input
               type="text"
-              name="titulo"
-              value={this.state.titulo}
+              value={this.state.title}
+              name="title"
               placeholder="Digite o titulo"
               onChange={this.handleChange}
             ></input>
