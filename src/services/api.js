@@ -8,19 +8,19 @@ axios.interceptors.request.use(
   (error) => Promise.reject(error)
 )
 
-axios.interceptors.request.use(
-  (config) => {
-    return { ...config, headers: { 'Content-Type': 'application/json' } }
-  },
+// axios.interceptors.request.use(
+//   (config) => {
+//     return { ...config, headers: { 'Content-Type': 'application/json' } }
+//   },
 
-  (error) => {
-    const { status } = error.response
+//   (error) => {
+//     const { status } = error.response
 
-    if (status === 401) {
-    }
-    return Promise.reject(error)
-  }
-)
+//     if (status === 401) {
+//     }
+//     return Promise.reject(error)
+//   }
+// )
 
 const api = axios
 
