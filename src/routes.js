@@ -7,11 +7,8 @@ function Routes() {
   return (
     <>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route
-          path="https://crud-front.netlify.app/list"
-          component={listProducts}
-        />
+        <Route path="/" component={Home} />
+        <Route path="/list" component={listProducts} />
       </Switch>
     </>
   )
