@@ -1,86 +1,77 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Image from '../assets/imagem_1.jpeg'
 import api from '../services/api'
 import './style.css'
-class Home extends Component {
-  state = {
-    image: null,
-    title: '',
-    price: '',
-    description: '',
-  }
 
-  handleSubmit = async (e) => {
+function Home() {
+  const [image, setImage] = useState('')
+  const [title, setTitle] = useState('Titiulo do Produto')
+  const [price, setPrice] = useState('20500')
+  const [description, setDescription] = useState('Descrição 1')
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    try {
+      const data = new FormData()
 
-    const data = new FormData()
+      data.append('image', image)
+      data.append('title', title)
+      data.append('description', description)
+      data.append('price', price)
 
-    data.append('image', this.state.image)
-    data.append('title', this.state.title)
-    data.append('description', this.state.description)
-    data.append('price', this.state.price)
+      await api.post('/', data)
 
-    await api.post('/', data)
-
-    window.location.reload('/')
+      window.location.reload('/')
+    } catch (error) {
+      console.log(error)
+    }
   }
+  return (
+    <div className="new-incident-container">
+      <div className="content">
+        <Link to="/list"> Link do Produtos</Link>
 
-  handleImageChange = (e) => {
-    this.setState({ image: e.target.files[0] })
-  }
+        <section>
+          <img src={Image} alt="logo" className="img" />
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value })
-  }
+          <h1>Cadastrar novo Produto</h1>
+        </section>
+        <form id="new-post" onSubmit={handleSubmit}>
+          <input
+            type="file"
+            name="imagem"
+            onChange={(e) => setImage(e.target.files[0])}
+            placeholder="Digite a imagem"
+          />
+          <input
+            type="text"
+            value={title}
+            name="title"
+            placeholder="Digite o titulo"
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            type="text"
+            value={description}
+            name="description"
+            placeholder="Digite a descrição"
+            onChange={(e) => setDescription(e.target.value)}
+          />
 
-  render() {
-    return (
-      <div className="new-incident-container">
-        <div className="content">
-          <Link to='/list'> Link do Produtos</Link>
+          <input
+            type="text"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            name="price"
+            placeholder="Digite o preço"
+          />
 
-          <section>
-            <img src={Image} alt="logo" className="img" />
-
-            <h1>Cadastrar novo Produto</h1>
-          </section>
-          <form id="new-post" onSubmit={this.handleSubmit}>
-            <input
-              type="file"
-              name="imagem"
-              onChange={this.handleImageChange}
-              placeholder="Digite a imagem"
-            ></input>
-            <input
-              type="text"
-              value={this.state.title}
-              name="title"
-              placeholder="Digite o titulo"
-              onChange={this.handleChange}
-            ></input>
-            <input
-              type="text"
-              value={this.state.description}
-              name="description"
-              placeholder="Digite a descrição"
-              onChange={this.handleChange}
-            ></input>
-
-            <input
-              type="text"
-              value={this.state.price}
-              onChange={this.handleChange}
-              name="price"
-              placeholder="Digite o preço"
-            ></input>
-
-            <input type="submit" className="button" value="Cadastrar"></input>
-          </form>
-        </div>
+          <input type="submit" className="button" value="Cadastrar" />
+        </form>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default Home
