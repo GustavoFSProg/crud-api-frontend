@@ -5,9 +5,7 @@ import Routes from '../src/routes'
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
+      <Routes />
     </>
   )
 }
