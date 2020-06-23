@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import Home from './pages/home'
-import path from 'path'
 import listProducts from './pages/listProducts'
 
 export default function Routes() {
@@ -9,8 +8,8 @@ export default function Routes() {
     <>
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact component={Home}></Route>
-          <Route path="/list" component={listProducts}></Route>
+          <Route path="/"  component={Home}></Route>
+          <Route path="/list"  exact component={listProducts}></Route>
         </Switch>
       </BrowserRouter>
     </>
