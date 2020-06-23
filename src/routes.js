@@ -1,9 +1,9 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import Home from './pages/home'
 import listProducts from './pages/listProducts'
 
-export default function Routes() {
+function Routes() {
   return (
     <>
       <Switch>
@@ -13,3 +13,5 @@ export default function Routes() {
     </>
   )
 }
+
+export default Routes
