@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Image from '../assets/imagem_1.jpeg'
 import api from '../services/api'
 import './style.css'
-
 class Home extends Component {
   state = {
     image: null,
@@ -38,7 +38,8 @@ class Home extends Component {
     return (
       <div className="new-incident-container">
         <div className="content">
-          <a href="/list">Link Listagem Produtos</a>
+          <Link to='/list'> Link do Produtos</Link>
+
           <section>
             <img src={Image} alt="logo" className="img" />
 
