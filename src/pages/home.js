@@ -38,6 +38,7 @@ class Home extends Component {
     return (
       <div className="new-incident-container">
         <div className="content">
+          <a href="/produto">Link Listagem Produtos</a>
           <section>
             <img src={Image} alt="logo" className="img" />
 
