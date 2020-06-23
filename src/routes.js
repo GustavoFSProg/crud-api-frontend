@@ -6,7 +6,7 @@ import listProducts from './pages/listProducts'
 export default function Routes() {
   return (
     <>
-      <BrowserRouter />
+      <BrowserRouter >
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/list" component={listProducts} />
