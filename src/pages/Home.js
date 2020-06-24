@@ -6,7 +6,7 @@ import './style.css'
 
 function Home() {
   const [image, setImage] = useState('')
-  const [title, setTitle] = useState('Titiulo do Produto')
+  const [title, setTitle] = useState('Titulo do Produto')
   const [price, setPrice] = useState('20500')
   const [description, setDescription] = useState('Descrição 1')
 
@@ -24,6 +24,7 @@ function Home() {
 
       window.location.reload('/')
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error)
     }
   }
