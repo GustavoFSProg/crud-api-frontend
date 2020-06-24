@@ -2,12 +2,20 @@ import React, { useState } from 'react'
 import api from '../services/api'
 import './style.css'
 
-async function ListProducts() {
+function ListProducts() {
   const [lista, setLista] = useState([])
 
-  const response = await api.get('/')
+  async function dataBase() {
+    const response = await api.get('/')
 
-  setLista(response.data)
+    setLista(response.data)
+
+    // eslint-disable-next-line no-console
+    return lista
+  }
+
+  // eslint-disable-next-line no-unused-vars
+  const stageing = dataBase()
 
   return (
     <div className="new-incident-container">
