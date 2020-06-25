@@ -31,6 +31,11 @@ function ListProducts() {
                     {product.title}
                   </span>
                   <br />
+                  <img
+                    src={`https://crud-api-no.herokuapp.com/files/${product.image}`}
+                    alt="imagem"
+                    className="imagem"
+                  />
                   <span className="place">
                     <strong> Descrição: </strong>
                     {product.description}
