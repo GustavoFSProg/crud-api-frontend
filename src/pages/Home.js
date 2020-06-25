@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import Image from '../assets/imagem_1.jpeg'
 import api from '../services/api'
 import './style.css'
@@ -31,45 +30,47 @@ function Home() {
   return (
     <div className="new-incident-container">
       <div className="content">
-        <Link to="/list"> Link do Produtos</Link>
+        <div align="center">
+          {' '}
+          <section>
+            <img src={Image} alt="logo" className="img-um" />
 
-        <section>
-          <img src={Image} alt="logo" className="img" />
+            <h1>Cadastrar novo Produto</h1>
+            <br />
+          </section>
+          <form id="new-post" onSubmit={handleSubmit}>
+            <input
+              type="file"
+              name="imagem"
+              onChange={(e) => setImage(e.target.files[0])}
+              placeholder="Digite a imagem"
+            />
+            <input
+              type="text"
+              value={title}
+              name="title"
+              placeholder="Digite o titulo"
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <input
+              type="text"
+              value={description}
+              name="description"
+              placeholder="Digite a descrição"
+              onChange={(e) => setDescription(e.target.value)}
+            />
 
-          <h1>Cadastrar novo Produto</h1>
-        </section>
-        <form id="new-post" onSubmit={handleSubmit}>
-          <input
-            type="file"
-            name="imagem"
-            onChange={(e) => setImage(e.target.files[0])}
-            placeholder="Digite a imagem"
-          />
-          <input
-            type="text"
-            value={title}
-            name="title"
-            placeholder="Digite o titulo"
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <input
-            type="text"
-            value={description}
-            name="description"
-            placeholder="Digite a descrição"
-            onChange={(e) => setDescription(e.target.value)}
-          />
+            <input
+              type="text"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              name="price"
+              placeholder="Digite o preço"
+            />
 
-          <input
-            type="text"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            name="price"
-            placeholder="Digite o preço"
-          />
-
-          <input type="submit" className="button" value="Cadastrar" />
-        </form>
+            <input type="submit" className="button" value="Cadastrar" />
+          </form>
+        </div>
       </div>
     </div>
   )
