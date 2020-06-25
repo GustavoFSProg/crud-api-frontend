@@ -6,9 +6,9 @@ import './style.css'
 
 function Home() {
   const [image, setImage] = useState('')
-  const [title, setTitle] = useState('Titulo do Produto')
-  const [price, setPrice] = useState('20500')
-  const [description, setDescription] = useState('Descrição 1')
+  const [title, setTitle] = useState('')
+  const [price, setPrice] = useState('')
+  const [description, setDescription] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
