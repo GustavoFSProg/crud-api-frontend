@@ -26,17 +26,18 @@ function ListProducts() {
             <article key={product._id}>
               <header>
                 <div className="user-info">
-                  <span>
-                    <strong>Titulo: </strong>
-                    {product.title}
-                  </span>
-                  <br />
                   <img
                     src={`https://crud-api-no.herokuapp.com/files/${product.image}`}
                     alt="imagem"
                     className="imagem"
                   />
                   <br />
+                  <span>
+                    <strong>Titulo: </strong>
+                    {product.title}
+                  </span>
+                  <br />
+
                   <span className="place">
                     <strong> Descrição: </strong>
                     {product.description}
