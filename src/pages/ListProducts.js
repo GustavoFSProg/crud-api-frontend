@@ -36,6 +36,7 @@ function ListProducts() {
                     alt="imagem"
                     className="imagem"
                   />
+                  <br />
                   <span className="place">
                     <strong> Descrição: </strong>
                     {product.description}
